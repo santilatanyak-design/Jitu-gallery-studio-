@@ -1,0 +1,6 @@
+{
+  "name": "Jitu Gallery Studio",
+  "description": "Smart AI order assistant and studio design management system for Jitu Gallery Studio in Odisha.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

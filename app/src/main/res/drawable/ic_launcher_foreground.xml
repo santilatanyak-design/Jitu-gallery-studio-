@@ -1,0 +1,31 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Camera/Studio Icon centered in 66dp zone (from (21,21) to (87,87)) -->
+    <!-- Camera body -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,36 h44 c3.3,0 6,2.7 6,6 v28 c0,3.3 -2.7,6 -6,6 H32 c-3.3,0 -6,-2.7 -6,-6 V42 c0,-3.3 2.7,-6 6,-6 z" />
+    <!-- Camera top bump -->
+    <path
+        android:fillColor="#F8F9FA"
+        android:pathData="M44,30 h20 l4,6 H40 z" />
+    <!-- Outer Lens Ring -->
+    <path
+        android:fillColor="#E63946"
+        android:pathData="M54,56 m-14,0 a14,14 0 1,0 28,0 a14,14 0 1,0 -28,0" />
+    <!-- Inner Lens -->
+    <path
+        android:fillColor="#1D3557"
+        android:pathData="M54,56 m-9,0 a9,9 0 1,0 18,0 a9,9 0 1,0 -18,0" />
+    <!-- Lens reflection -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M58,52 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0" />
+    <!-- Flash/Star accent -->
+    <path
+        android:fillColor="#FFD166"
+        android:pathData="M70,42 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0" />
+</vector>
