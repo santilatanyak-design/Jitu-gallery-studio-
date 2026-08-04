@@ -60,8 +60,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.material.icons.filled.Verified
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
@@ -624,20 +626,11 @@ fun PaymentDialog(
                     style = MaterialTheme.typography.bodySmall.copy(color = Color.DarkGray)
                 )
 
-                // Render Paytm QR Code Asset
-                Surface(
-                    shape = RoundedCornerShape(12.dp),
-                    border = BorderStroke(2.dp, StudioGold),
-                    modifier = Modifier.padding(4.dp)
-                ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.paytm_qr),
-                        contentDescription = "Paytm QR Code",
-                        modifier = Modifier
-                            .size(200.dp)
-                            .padding(8.dp)
-                    )
-                }
+                // Authentic Paytm QR Card Component
+                OriginalPaytmQRCard(
+                    upiId = "9337971679@ptsbi",
+                    payeeName = "Jitu Nayak"
+                )
 
                 Surface(
                     color = StudioNavy.copy(alpha = 0.08f),
@@ -645,7 +638,10 @@ fun PaymentDialog(
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Text(
-                        text = "After payment, click 'Payment Done'. An email notification will be sent to nayakjitu986@gmail.com for verification.",
+                        text = if (language == "ENGLISH")
+                            "After payment, click 'Payment Done'. An email notification will be sent to nayakjitu986@gmail.com for verification."
+                        else
+                            "ପେମେଣ୍ଟ କରିସାରିବା ପରେ 'Payment Done' କ୍ଲିକ୍ କରନ୍ତୁ। ନିଶ୍ଚିତକରଣ ପାଇଁ nayakjitu986@gmail.com କୁ ଇମେଲ୍ ଯିବ।",
                         style = MaterialTheme.typography.labelSmall.copy(
                             color = StudioNavy,
                             fontSize = 11.sp
@@ -679,6 +675,236 @@ fun PaymentDialog(
             }
         }
     )
+}
+
+@Composable
+fun OriginalPaytmQRCard(
+    upiId: String = "9337971679@ptsbi",
+    payeeName: String = "Jitu Nayak",
+    modifier: Modifier = Modifier
+) {
+    val context = LocalContext.current
+    val clipboardManager = LocalClipboardManager.current
+
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = modifier
+            .fillMaxWidth()
+            .background(Color(0xFFF1F5F9), RoundedCornerShape(16.dp))
+            .padding(12.dp)
+    ) {
+        // Top Profile Avatar Circle
+        Box(
+            modifier = Modifier
+                .size(56.dp)
+                .clip(CircleShape)
+                .background(StudioGold)
+                .padding(2.dp)
+                .clip(CircleShape)
+                .background(Color(0xFF8B0000)),
+            contentAlignment = Alignment.Center
+        ) {
+            Text(
+                text = "🌸",
+                fontSize = 24.sp
+            )
+        }
+
+        Spacer(modifier = Modifier.height(6.dp))
+
+        // Name + Verified Badge
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center
+        ) {
+            Text(
+                text = payeeName,
+                style = MaterialTheme.typography.titleMedium.copy(
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 17.sp,
+                    color = Color(0xFF0F172A)
+                )
+            )
+            Spacer(modifier = Modifier.width(6.dp))
+            Icon(
+                imageVector = Icons.Default.Verified,
+                contentDescription = "Verified Merchant",
+                tint = Color(0xFF00B9F1),
+                modifier = Modifier.size(18.dp)
+            )
+        }
+
+        Spacer(modifier = Modifier.height(12.dp))
+
+        // Two-tone Paytm Card Frame
+        Card(
+            shape = RoundedCornerShape(16.dp),
+            colors = CardDefaults.cardColors(containerColor = Color(0xFF00B9F1)),
+            elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(
+                        brush = Brush.verticalGradient(
+                            colors = listOf(
+                                Color(0xFF00B9F1), // Paytm Cyan top
+                                Color(0xFF00B9F1),
+                                Color(0xFF002970), // Paytm Dark Navy bottom
+                                Color(0xFF002970)
+                            )
+                        )
+                    )
+                    .padding(12.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                // Inner White Container
+                Surface(
+                    shape = RoundedCornerShape(14.dp),
+                    color = Color.White,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(12.dp)
+                    ) {
+                        // paytm ❤ UPI Header
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.Center
+                        ) {
+                            Text(
+                                text = "paytm",
+                                fontWeight = FontWeight.ExtraBold,
+                                fontSize = 20.sp,
+                                color = Color(0xFF002970)
+                            )
+                            Spacer(modifier = Modifier.width(4.dp))
+                            Text(
+                                text = "❤",
+                                fontSize = 14.sp,
+                                color = Color(0xFFE11D48)
+                            )
+                            Spacer(modifier = Modifier.width(4.dp))
+                            Text(
+                                text = "UPI",
+                                fontWeight = FontWeight.ExtraBold,
+                                fontSize = 20.sp,
+                                color = Color(0xFF002970)
+                            )
+                        }
+
+                        Spacer(modifier = Modifier.height(10.dp))
+
+                        // QR Code Image
+                        Image(
+                            painter = painterResource(id = R.drawable.paytm_qr),
+                            contentDescription = "Paytm QR Code for $upiId",
+                            modifier = Modifier
+                                .size(190.dp)
+                                .clip(RoundedCornerShape(6.dp))
+                        )
+
+                        Spacer(modifier = Modifier.height(10.dp))
+
+                        // UPI ID Badge
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.Center,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .background(Color(0xFFF8FAFC), RoundedCornerShape(20.dp))
+                                .padding(horizontal = 10.dp, vertical = 6.dp)
+                        ) {
+                            Text(
+                                text = "▶",
+                                fontSize = 11.sp,
+                                color = Color(0xFFFF9900)
+                            )
+                            Spacer(modifier = Modifier.width(6.dp))
+                            Text(
+                                text = upiId,
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 13.sp,
+                                color = Color(0xFF1E293B)
+                            )
+                            Spacer(modifier = Modifier.width(6.dp))
+                            IconButton(
+                                onClick = {
+                                    clipboardManager.setText(AnnotatedString(upiId))
+                                    Toast.makeText(context, "UPI ID Copied: $upiId", Toast.LENGTH_SHORT).show()
+                                },
+                                modifier = Modifier.size(24.dp)
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.ContentCopy,
+                                    contentDescription = "Copy UPI ID",
+                                    tint = Color(0xFF002970),
+                                    modifier = Modifier.size(15.dp)
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        Spacer(modifier = Modifier.height(10.dp))
+
+        // Direct App Switcher Payment Button
+        Button(
+            onClick = {
+                val upiUri = Uri.parse("upi://pay?pa=$upiId&pn=${Uri.encode(payeeName)}&cu=INR")
+                val intent = Intent(Intent.ACTION_VIEW, upiUri)
+                try {
+                    context.startActivity(Intent.createChooser(intent, "Pay via UPI App"))
+                } catch (e: Exception) {
+                    clipboardManager.setText(AnnotatedString(upiId))
+                    Toast.makeText(context, "UPI ID copied: $upiId. Open Paytm/PhonePe to pay.", Toast.LENGTH_LONG).show()
+                }
+            },
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF002970)),
+            shape = RoundedCornerShape(10.dp),
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Icon(
+                imageVector = Icons.Default.QrCode2,
+                contentDescription = null,
+                tint = Color.White,
+                modifier = Modifier.size(16.dp)
+            )
+            Spacer(modifier = Modifier.width(6.dp))
+            Text(
+                text = "Pay via Paytm / PhonePe / GPay",
+                fontWeight = FontWeight.Bold,
+                color = Color.White,
+                fontSize = 12.sp
+            )
+        }
+
+        Spacer(modifier = Modifier.height(6.dp))
+
+        // Footer Text
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center
+        ) {
+            Text(
+                text = "Scan with any UPI app ",
+                fontSize = 11.sp,
+                color = Color.Gray
+            )
+            Text(
+                text = "paytm | BHIM | GPay",
+                fontSize = 11.sp,
+                color = Color(0xFF002970),
+                fontWeight = FontWeight.Bold
+            )
+        }
+    }
 }
 
 private fun sendPaymentNotificationEmail(context: Context, order: OrderEntity) {

@@ -4,93 +4,93 @@
     android:viewportWidth="280"
     android:viewportHeight="280">
 
-    <!-- Background Card -->
+    <!-- White Background Container -->
     <path
         android:fillColor="#FFFFFF"
         android:pathData="M16,0 L264,0 A16,16 0 0,1 280,16 L280,264 A16,16 0 0,1 264,280 L16,280 A16,16 0 0,1 0,264 L0,16 A16,16 0 0,1 16,0 Z" />
 
-    <!-- Paytm Top Header Bar -->
+    <!-- Top Left Corner Finder Pattern -->
     <path
         android:fillColor="#002E6E"
-        android:pathData="M0,16 A16,16 0 0,1 16,0 L264,0 A16,16 0 0,1 280,16 L280,50 L0,50 Z" />
-
-    <!-- Paytm Accent Line -->
+        android:pathData="M24,24 L96,24 L96,96 L24,96 Z M36,36 L36,84 L84,84 L84,36 Z" />
     <path
         android:fillColor="#00B9F1"
-        android:pathData="M0,50 L280,50 L280,54 L0,54 Z" />
+        android:pathData="M48,48 L72,48 L72,72 L48,72 Z" />
 
-    <!-- Inner Border for QR -->
-    <path
-        android:fillColor="#F0F4F8"
-        android:pathData="M24,64 L256,64 A8,8 0 0,1 264,72 L264,256 A8,8 0 0,1 256,264 L24,264 A8,8 0 0,1 16,256 L16,72 A8,8 0 0,1 24,64 Z" />
-
-    <!-- Top Left Corner Target -->
+    <!-- Top Right Corner Finder Pattern -->
     <path
         android:fillColor="#002E6E"
-        android:pathData="M32,80 L88,80 L88,136 L32,136 Z M40,88 L40,128 L80,128 L80,88 Z" />
+        android:pathData="M184,24 L256,24 L256,96 L184,96 Z M196,36 L196,84 L244,84 L244,36 Z" />
     <path
         android:fillColor="#00B9F1"
-        android:pathData="M48,96 L72,96 L72,120 L48,120 Z" />
+        android:pathData="M208,48 L232,48 L232,72 L208,72 Z" />
 
-    <!-- Top Right Corner Target -->
+    <!-- Bottom Left Corner Finder Pattern -->
     <path
         android:fillColor="#002E6E"
-        android:pathData="M192,80 L248,80 L248,136 L192,136 Z M200,88 L200,128 L240,128 L240,88 Z" />
-    <path
-        android:fillColor="#00B9F1"
-        android:pathData="M208,96 L232,96 L232,120 L208,120 Z" />
-
-    <!-- Bottom Left Corner Target -->
-    <path
-        android:fillColor="#002E6E"
-        android:pathData="M32,192 L88,192 L88,248 L32,248 Z M40,200 L40,240 L80,240 L80,200 Z" />
+        android:pathData="M24,184 L96,184 L96,256 L24,256 Z M36,196 L36,244 L84,244 L84,196 Z" />
     <path
         android:fillColor="#00B9F1"
         android:pathData="M48,208 L72,208 L72,232 L48,232 Z" />
 
-    <!-- QR Data Matrix Blocks -->
-    <!-- Row 1 -->
-    <path android:fillColor="#002E6E" android:pathData="M104,80 L120,80 L120,96 L104,96 Z" />
-    <path android:fillColor="#002E6E" android:pathData="M136,80 L152,80 L152,96 L136,96 Z" />
-    <path android:fillColor="#002E6E" android:pathData="M168,80 L184,80 L184,96 L168,96 Z" />
-
-    <!-- Row 2 -->
-    <path android:fillColor="#00B9F1" android:pathData="M96,104 L112,104 L112,120 L96,120 Z" />
-    <path android:fillColor="#002E6E" android:pathData="M128,104 L144,104 L144,120 L128,120 Z" />
-    <path android:fillColor="#00B9F1" android:pathData="M160,104 L176,104 L176,120 L160,120 Z" />
-
-    <!-- Row 3 -->
-    <path android:fillColor="#002E6E" android:pathData="M104,128 L128,128 L128,144 L104,144 Z" />
-    <path android:fillColor="#002E6E" android:pathData="M144,128 L168,128 L168,144 L144,144 Z" />
-
-    <!-- Center QR Module -->
-    <path android:fillColor="#002E6E" android:pathData="M32,152 L56,152 L56,176 L32,176 Z" />
-    <path android:fillColor="#00B9F1" android:pathData="M72,152 L88,152 L88,168 L72,168 Z" />
-    <path android:fillColor="#002E6E" android:pathData="M104,152 L120,152 L120,184 L104,184 Z" />
-    <path android:fillColor="#002E6E" android:pathData="M136,152 L168,152 L168,168 L136,168 Z" />
-    <path android:fillColor="#00B9F1" android:pathData="M184,152 L200,152 L200,176 L184,176 Z" />
-    <path android:fillColor="#002E6E" android:pathData="M216,152 L248,152 L248,168 L216,168 Z" />
-
-    <!-- Lower Matrix Blocks -->
-    <path android:fillColor="#002E6E" android:pathData="M104,192 L120,192 L120,216 L104,216 Z" />
-    <path android:fillColor="#00B9F1" android:pathData="M136,192 L152,192 L152,208 L136,208 Z" />
-    <path android:fillColor="#002E6E" android:pathData="M168,192 L184,192 L184,216 L168,216 Z" />
-    <path android:fillColor="#002E6E" android:pathData="M200,192 L224,192 L224,208 L200,208 Z" />
-
-    <path android:fillColor="#00B9F1" android:pathData="M120,224 L144,224 L144,248 L120,248 Z" />
-    <path android:fillColor="#002E6E" android:pathData="M152,224 L176,224 L176,240 L152,240 Z" />
-    <path android:fillColor="#002E6E" android:pathData="M192,224 L216,224 L216,248 L192,248 Z" />
-    <path android:fillColor="#00B9F1" android:pathData="M232,216 L248,216 L248,240 L232,240 Z" />
-
-    <!-- Center Logo Badge -->
+    <!-- Alignment Pattern (Bottom Right) -->
     <path
         android:fillColor="#002E6E"
-        android:pathData="M116,116 L164,116 A6,6 0 0,1 170,122 L170,158 A6,6 0 0,1 164,164 L116,164 A6,6 0 0,1 110,158 L110,122 A6,6 0 0,1 116,116 Z" />
+        android:pathData="M192,192 L232,192 L232,232 L192,232 Z M200,200 L200,224 L224,224 L224,200 Z" />
     <path
         android:fillColor="#00B9F1"
-        android:pathData="M120,120 L160,120 L160,160 L120,160 Z" />
+        android:pathData="M208,208 L216,208 L216,216 L208,216 Z" />
+
+    <!-- Matrix Data Modules for 9337971679@ptsbi -->
+    <!-- Top Area Grid -->
+    <path android:fillColor="#002E6E" android:pathData="M112,24 L128,24 L128,40 L112,40 Z" />
+    <path android:fillColor="#002E6E" android:pathData="M144,24 L168,24 L168,40 L144,40 Z" />
+    <path android:fillColor="#00B9F1" android:pathData="M112,48 L136,48 L136,64 L112,64 Z" />
+    <path android:fillColor="#002E6E" android:pathData="M152,48 L168,48 L168,64 L152,64 Z" />
+    <path android:fillColor="#002E6E" android:pathData="M112,72 L128,72 L128,96 L112,96 Z" />
+    <path android:fillColor="#00B9F1" android:pathData="M144,72 L168,72 L168,88 L144,88 Z" />
+
+    <!-- Timing Patterns -->
+    <path android:fillColor="#002E6E" android:pathData="M104,56 L112,56 L112,64 L104,64 Z" />
+    <path android:fillColor="#002E6E" android:pathData="M56,104 L64,104 L64,112 L56,112 Z" />
+    <path android:fillColor="#002E6E" android:pathData="M72,104 L80,104 L80,112 L72,112 Z" />
+    <path android:fillColor="#002E6E" android:pathData="M104,104 L120,104 L120,112 L104,112 Z" />
+    <path android:fillColor="#002E6E" android:pathData="M136,104 L152,104 L152,112 L136,112 Z" />
+    <path android:fillColor="#002E6E" android:pathData="M168,104 L184,104 L184,112 L168,112 Z" />
+
+    <!-- Left & Right Middle Areas -->
+    <path android:fillColor="#002E6E" android:pathData="M24,112 L40,112 L40,136 L24,136 Z" />
+    <path android:fillColor="#00B9F1" android:pathData="M48,112 L72,112 L72,128 L48,128 Z" />
+    <path android:fillColor="#002E6E" android:pathData="M80,112 L96,112 L96,136 L80,136 Z" />
+
+    <path android:fillColor="#002E6E" android:pathData="M184,112 L208,112 L208,128 L184,128 Z" />
+    <path android:fillColor="#00B9F1" android:pathData="M224,112 L248,112 L248,128 L224,128 Z" />
+
+    <!-- Lower Data Grid -->
+    <path android:fillColor="#002E6E" android:pathData="M24,144 L56,144 L56,160 L24,160 Z" />
+    <path android:fillColor="#00B9F1" android:pathData="M72,144 L88,144 L88,168 L72,168 Z" />
+    <path android:fillColor="#002E6E" android:pathData="M104,128 L120,128 L120,168 L104,168 Z" />
+    <path android:fillColor="#002E6E" android:pathData="M160,128 L176,128 L176,168 L160,168 Z" />
+    <path android:fillColor="#00B9F1" android:pathData="M184,144 L208,144 L208,160 L184,160 Z" />
+    <path android:fillColor="#002E6E" android:pathData="M224,144 L256,144 L256,168 L224,168 Z" />
+
+    <path android:fillColor="#002E6E" android:pathData="M112,184 L136,184 L136,200 L112,200 Z" />
+    <path android:fillColor="#00B9F1" android:pathData="M144,184 L168,184 L168,208 L144,208 Z" />
+    <path android:fillColor="#002E6E" android:pathData="M112,216 L128,216 L128,248 L112,248 Z" />
+    <path android:fillColor="#00B9F1" android:pathData="M136,224 L168,224 L168,240 L136,240 Z" />
+    <path android:fillColor="#002E6E" android:pathData="M176,216 L184,216 L184,248 L176,248 Z" />
+    <path android:fillColor="#002E6E" android:pathData="M240,184 L256,184 L256,216 L240,216 Z" />
+    <path android:fillColor="#002E6E" android:pathData="M240,232 L256,232 L256,256 L240,256 Z" />
+
+    <!-- Center Paytm Logo Badge -->
+    <path
+        android:fillColor="#002E6E"
+        android:pathData="M120,120 L160,120 A8,8 0 0,1 168,128 L168,152 A8,8 0 0,1 160,160 L120,160 A8,8 0 0,1 112,152 L112,128 A8,8 0 0,1 120,120 Z" />
+    <path
+        android:fillColor="#00B9F1"
+        android:pathData="M124,124 L156,124 L156,156 L124,156 Z" />
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M126,130 L136,130 L136,150 L126,150 Z M142,130 L154,130 L154,150 L142,150 Z" />
+        android:pathData="M130,132 L138,132 L138,148 L130,148 Z M142,132 L150,132 L150,148 L142,148 Z" />
 
 </vector>
