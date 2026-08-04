@@ -5,12 +5,16 @@ workflows:
     environment:
       java: 17
     scripts:
+      - name: Generate Gradle Wrapper (8.3.1)
+        script: gradle wrapper --gradle-version 8.3.1
+      - name: Give execute permissions to gradlew
+        script: chmod +x ./gradlew
       - name: Generate release keystore
         script: |
           keytool -genkey -v -keystore release.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000 -storepass password -keypass password -dname "CN=Jitu, OU=Jitu Gallery Studio, O=Jitu Gallery Studio, L=Odisha, ST=Odisha, C=IN"
       - name: Build Release APK
         script: |
-          gradle assembleRelease \
+          ./gradlew assembleRelease \
             -Pandroid.injected.signing.store.file=$(pwd)/release.keystore \
             -Pandroid.injected.signing.store.password=password \
             -Pandroid.injected.signing.key.alias=my-key-alias \
