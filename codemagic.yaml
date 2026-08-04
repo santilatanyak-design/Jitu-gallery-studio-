@@ -1,18 +1,22 @@
 workflows:
-  android-workflow:
-    name: Android Build
-    max_build_duration: 60
+  android-release-workflow:
+    name: Android Release Workflow
     instance_type: mac_mini_m1
     environment:
       java: 17
     scripts:
-      - name: Setup Gradle & Keystore
+      - name: Give execute permissions to gradlew
+        script: chmod +x ./gradlew
+      - name: Generate release keystore
         script: |
-          wget https://services.gradle.org/distributions/gradle-9.6.1-bin.zip -O gradle.zip
-          unzip -q gradle.zip -d $HOME
-          keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "C=US, O=Android, CN=Android Debug"
-      - name: Build Android APK
-        script: $HOME/gradle-9.6.1/bin/gradle assembleDebug
+          keytool -genkey -v -keystore release.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000 -storepass password -keypass password -dname "CN=Jitu, OU=Jitu Gallery Studio, O=Jitu Gallery Studio, L=Odisha, ST=Odisha, C=IN"
+      - name: Build Release APK
+        script: |
+          ./gradlew assembleRelease \
+            -Pandroid.injected.signing.store.file=$(pwd)/release.keystore \
+            -Pandroid.injected.signing.store.password=password \
+            -Pandroid.injected.signing.key.alias=my-key-alias \
+            -Pandroid.injected.signing.key.password=password
     artifacts:
-      - app/build/outputs/apk/debug/app-debug.apk
+      - app/build/outputs/apk/release/*.apk
 
